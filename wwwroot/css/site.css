@@ -1,0 +1,29 @@
+﻿.btn:disabled:hover,
+.btn:disabled:active,
+.btn:disabled:hover:active {
+    cursor: not-allowed;
+}
+
+.loading-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 50000;
+    visibility: visible;
+    top: 0;
+    left: 0;
+    background-color: rgb(141, 149, 155);
+    opacity: 0.5;
+}
+
+.loading {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -64px;
+    margin-left: -64px;
+    opacity: 1;
+    background-size: 100px;
+    width: 100px;
+    height: 100px;
+}

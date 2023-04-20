@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PFV.Quotation.Evaluation.props" />
+</Project>
