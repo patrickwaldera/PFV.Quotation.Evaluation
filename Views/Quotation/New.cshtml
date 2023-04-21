@@ -5,503 +5,131 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <title>PFV</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Progressiva Força de Vendas" name="description" />
-    <meta content="Progressiva" name="author" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <meta charset="utf-8" />
+  <title>PFV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Progressiva Força de Vendas" name="description" />
+  <meta content="Progressiva" name="author" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link rel="shortcut icon" href="~/images/icon.png">
+  <link rel="shortcut icon" href="~/images/icon.png">
 
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/css/app.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+  @* <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> *@
+  <link href="~/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="~/css/app.min.css" rel="stylesheet" type="text/css" />
+  <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+  <link href="~/css/form.css" rel="stylesheet" type="text/css" />
 
-    <link href="~/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/libs/switchery/switchery.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/libs/custombox/custombox.min.css" rel="stylesheet">
-
+  <link href="~/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+  <link href="~/libs/switchery/switchery.min.css" rel="stylesheet" type="text/css" />
+  <link href="~/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+  <link href="~/libs/custombox/custombox.min.css" rel="stylesheet">
 
 </head>
-
-<body data-layout="horizontal" style="background-color: #fff !important;">
-    <div id="wrapper">
-        <div class="container-fluid" style="margin-top: 15px !important;">
-            <!-- loading -->
-            <div class="loading-wrapper" style="display:none;">
-                <div class="loading">
-                    <i class="fa fa-spin fa-spinner fa-3x" style="width: auto;height: auto; line-height: 1px; margin-right: 10px; color:black;"></i>
-                </div>
+<body>
+  <div class="container">
+    <main>
+      <div class="box">
+        <a href="https://aprogressiva.com.br/">
+          <span><img src="~/images/logo.png" alt="" height="90"></span>
+        </a>
+        <div class="form-content">
+          <h3>Dados para Cotação</h3>
+          <div class="form-wrapper">
+            <div class="input-wrapper">
+              <label class="input-label" for="AssociatedName">Nome<span>*</span></label>
+              <div class="input-content">
+                  <img src="~/images/input-icons/person.svg" alt="" height="24">
+                  <input type="text" id="AssociatedName" class="form-control" placeholder="Seu nome" required>
+              </div>
             </div>
-
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-6">
-                    <div>
-                        <div class="text-center mb-4">
-                            <a href="https://aprogressiva.com.br/">
-                                <span><img src="~/images/logo.png" alt="" height="100"></span>
-                            </a>
-                        </div>
-
-                        <div class="row" id="div-associated">
-                            <div class="col-xl-12 text-center">
-                                <h3>Dados para Cotação</h3>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="AssociatedName">Nome<span class="text-danger">*</span></label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="AssociatedName" class="form-control" required>
-                                    </div>
-                                </div>
-                                @*<div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="AssociatedDocument">CPF/CNPJ</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="AssociatedDocument" class="form-control">
-                                        </div>
-                                    </div>*@
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="AssociatedEmail">E-mail<span class="text-danger">*</span></label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="AssociatedEmail" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="AssociatedPhoneNumber">Telefone<span class="text-danger">*</span></label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="AssociatedPhoneNumber" class="form-control" data-toggle="input-mask" data-mask-format="(00) 00000-0000" required>
-                                    </div>
-                                </div>
-
-                                @*<div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="DueDay">Melhor dia para vencimento</label>
-                                        <div class="col-md-9">
-                                            <select class="form-control select2" id="DueDay">
-                                                <option value="">Selecione um dia</option>
-                                                <option value="01">01</option>
-                                                <option value="05">05</option>
-                                                <option value="10">10</option>
-                                                <option value="15">15</option>
-                                                <option value="20">20</option>
-                                                <option value="25">25</option>
-                                            </select>
-                                        </div>
-                                    </div>*@
-
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="StateId">UF<span class="text-danger">*</span></label>
-                                    <div class="col-md-9">
-                                        <select class="form-control select2 select2-hidden-accessible" id="StateId" required>
-                                            <option value="" data-select2-id="3">Selecione a UF</option>
-                                            <option value="1" data-select2-id="21">AC</option>
-                                            <option value="2" data-select2-id="22">AL</option>
-                                            <option value="3" data-select2-id="23">AP</option>
-                                            <option value="4" data-select2-id="24">AM</option>
-                                            <option value="5" data-select2-id="25">BA</option>
-                                            <option value="6" data-select2-id="26">CE</option>
-                                            <option value="7" data-select2-id="27">DF</option>
-                                            <option value="8" data-select2-id="28">ES</option>
-                                            <option value="9" data-select2-id="29">GO</option>
-                                            <option value="10" data-select2-id="30">MA</option>
-                                            <option value="11" data-select2-id="31">MT</option>
-                                            <option value="12" data-select2-id="32">MS</option>
-                                            <option value="13" data-select2-id="33">MG</option>
-                                            <option value="14" data-select2-id="34">PA</option>
-                                            <option value="15" data-select2-id="35">PB</option>
-                                            <option value="16" data-select2-id="36">PR</option>
-                                            <option value="17" data-select2-id="37">PE</option>
-                                            <option value="18" data-select2-id="38">PI</option>
-                                            <option value="19" data-select2-id="39">RJ</option>
-                                            <option value="20" data-select2-id="40">RN</option>
-                                            <option value="21" data-select2-id="41">RS</option>
-                                            <option value="22" data-select2-id="42">RO</option>
-                                            <option value="23" data-select2-id="43">RR</option>
-                                            <option value="24" data-select2-id="44">SC</option>
-                                            <option value="25" data-select2-id="45">SP</option>
-                                            <option value="26" data-select2-id="46">SE</option>
-                                            <option value="27" data-select2-id="47">TO</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="form-group text-right mb-0">
-                                    <button id="associated-next" class="btn btn-info btn-rounded waves-effect waves-light" type="button" disabled>
-                                        Continuar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row" id="div-vehicle" style="display:none">
-                            <div class="col-xl-12 text-center">
-                                <h3>Dados do Veículo</h3>
-                            </div>
-
-
-
-                            <div class="col-xl-12">
-                                <div class="form-group row">
-                                    <label class="col-8 col-md-6 col-xl-3 col-form-label" for="IsApp">Você é Motorista de Aplicativo? <span class="text-danger">*</span></label>
-                                    <div class="col-4 col-md-6 col-xl-9 switchery-demo">
-                                        <input type="checkbox" id="IsApp" value="true" data-plugin="switchery" data-color="green" data-secondary-color="red" data-size="small" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="VehiclePlate">Placa<span class="text-danger">*</span></label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="VehiclePlate" class="form-control text-uppercase" maxlength="8" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="VehicleBrandId">Marca<span class="text-danger">*</span></label>
-                                    <div class="col-md-9">
-                                        <select class="form-control select2 select2-hidden-accessible" id="VehicleBrandId" required>
-                                            <option value="" data-select2-id="6">Selecione a Marca</option>
-                                            <option value="46" data-select2-id="1364">ACURA</option>
-                                            <option value="215" data-select2-id="2694">CAMINHÃO PESADO R</option>
-                                            <option value="253" data-select2-id="3219">BIASI</option>
-                                            <option value="108" data-select2-id="3482">BMW</option>
-                                            <option value="133" data-select2-id="3745">BRAVA</option>
-                                            <option value="130" data-select2-id="4008">BUENO</option>
-                                            <option value="127" data-select2-id="4271">CAGIVA</option>
-                                            <option value="257" data-select2-id="4534">COMIL</option>
-                                            <option value="90" data-select2-id="4797">FIBRAVAN</option>
-                                            <option value="189" data-select2-id="5060">HARLEY-DAVIDSON</option>
-                                            <option value="51" data-select2-id="5323">MARCOPOLO</option>
-                                            <option value="164" data-select2-id="5586">MOTORINO</option>
-                                            <option value="11" data-select2-id="5849">PUMA-ALFA</option>
-                                            <option value="66" data-select2-id="6112">ROVER</option>
-                                            <option value="26" data-select2-id="6375">TAC</option>
-                                            <option value="3" data-select2-id="7162">AGRALE</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="VehicleYear">Ano Modelo<span class="text-danger">*</span></label>
-                                    <div class="col-md-9">
-                                        <select class="form-control select2 select2-hidden-accessible" id="VehicleYear" required>
-                                            <option value="" data-select2-id="5">Selecione o Ano</option>
-                                            <option value="2005" data-select2-id="902">2005</option>
-                                            <option value="2003" data-select2-id="921">2003</option>
-                                            <option value="2002" data-select2-id="976">2002</option>
-                                            <option value="2001" data-select2-id="1013">2001</option>
-                                            <option value="2000" data-select2-id="1050">2000</option>
-                                            <option value="1999" data-select2-id="1069">1992</option>
-                                            <option value="1998" data-select2-id="1069">1992</option>
-                                            <option value="1997" data-select2-id="1069">1992</option>
-                                            <option value="1996" data-select2-id="1069">1992</option>
-                                            <option value="1995" data-select2-id="1069">1992</option>
-                                            <option value="1994" data-select2-id="1069">1992</option>
-                                            <option value="1993" data-select2-id="1069">1992</option>
-                                            <option value="1992" data-select2-id="1069">1992</option>
-                                            <option value="1991" data-select2-id="1069">1992</option>
-                                            <option value="1990" data-select2-id="1069">1992</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="VehicleModelId">Modelo<span class="text-danger">*</span></label>
-                                    <div class="col-md-9">
-                                        <select class="form-control select2 select2-hidden-accessible" id="VehicleModelId" required>
-                                            <option value="" data-select2-id="4">Selecione o Modelo</option>
-                                            <option value="66" data-select2-id="6112">ROVER</option>
-                                            <option value="26" data-select2-id="6375">TAC</option>
-                                            <option value="3" data-select2-id="7162">AGRALE</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                @*<div id="div-implements" style="display:none">
-                                        <div class="row">
-                                            <div class="col-md-3 col-xl-6 col-6  col-sm-2">
-                                                <div class="form-group text-left mb-0">
-                                                    <h4 id="implement-title">"Implemento"</h4>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-xl-6 col-6  col-sm-2">
-                                                <div class="form-group text-right mb-0">
-                                                    <button id="implement-add" class="btn btn-success btn-rounded waves-effect waves-light" type="button" data-toggle="modal" data-target="#implement-modal">
-                                                        Adicionar
-                                                        <i class="ace-icon fa fa-plus-circle"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-12">
-                                                <table class="table table-striped table-bordered table-sm table-responsive-sm dt-responsive nowrap">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="column-plate">Placa</th>
-                                                            <th>Tipo</th>
-                                                            <th>Valor</th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="table-implements-tbody">
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>*@
-                                <div id="div-vehicle-complement" style="display:none">
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="FipeCode">FIPE Cód.</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="FipeCode" class="form-control" disabled>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="FipePrice">FIPE Valor</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="FipePrice" class="form-control" disabled>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="VehicleType">Categoria</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="VehicleType" class="form-control" disabled>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="row">
-                                    <div class="col-md-3 col-xl-6 col-6 col-sm-2">
-                                        <div class="form-group text-left mb-0">
-                                            <button id="vehicle-back" class="btn btn-secondary btn-rounded waves-effect waves-light" type="button">
-                                                Voltar
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-xl-6 col-6  col-sm-2">
-                                        <div class="form-group text-right mb-0">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row" id="div-quota" style="display:none">
-                            <div class="col-xl-12 text-center">
-                                <h3>Produtos Inclusos</h3>
-                            </div>
-
-                            @*<input hidden id="QuotationHash" value="@ViewBag.QuotationHash" />
-                                <input hidden id="QuotaId" />
-                                <input hidden id="QuotaDiscountId" />
-                                <input hidden id="QuotationId" />
-                                <input hidden id="RegionalId" />*@
-
-                            <div class="col-xl-12" id="quota-products-included"></div>
-
-                            <hr />
-
-                            <div class="col-xl-12 text-center">
-                                <h3>Produtos Adicionais</h3>
-                            </div>
-
-                            <div class="col-xl-12" id="quota-products-optional"></div>
-
-                            <div class="col-xl-12 text-center" style="margin-top: 15px;">
-                                <h5>Resumo de valores</h5>
-                            </div>
-
-                            <div class="col-xl-12">
-                                <div class="row" style="height:35.9px;">
-                                    <label class="col-md-3 col-xl-6 col-6 col-sm-2 col-form-label">Valor de adesão</label>
-                                    <div class="col-md-3 col-xl-6 col-6 col-sm-2 text-right" style="line-height: 35.9px;">
-                                        <span id="adhesionValue" class="font-weight-bold"></span>
-                                    </div>
-                                </div>
-                                <div class="row" style="background: #ececec8c; height:35.9px;">
-                                    <label class="col-md-3 col-xl-6 col-6 col-sm-2 col-form-label">Valor da Mensalidade</label>
-                                    <div class="col-md-3 col-xl-6 col-6 col-sm-2 text-right" style="line-height: 35.9px;">
-                                        <span id="monthFee" class="font-weight-bold"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-12" style="margin-top:15px;">
-                                <div class="row">
-                                    <div class="col-md-1 col-xl-1 col-1 col-sm-1">
-                                        <div class="form-group text-left mb-0">
-                                            <button id="quota-back" class="btn btn-secondary btn-rounded waves-effect waves-light" type="button">
-                                                Voltar
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-11 col-xl-11 col-11  col-sm-11">
-                                        <div class="form-group text-right mb-0">
-                                            <button id="quotation-not-interest" class="btn btn-danger btn-rounded waves-effect waves-light" type="button" data-toggle="modal" data-target="#finish-modal" style="margin-bottom: 2px;">
-                                                Não me interessei
-                                            </button>
-
-                                            <button id="quotation-interest-information" class="btn btn-warning btn-rounded waves-effect waves-light" type="button" style="margin-bottom: 2px;">
-                                                Quero mais informações
-                                            </button>
-
-                                            <button id="quotation-interest" class="btn btn-success btn-rounded waves-effect waves-light" type="button">
-                                                Quero me tornar um associado
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="input-wrapper">
+              <label class="input-label" for="AssociatedName">E-mail<span>*</span></label>
+              <div class="input-content">
+                  <img src="~/images/input-icons/mail.svg" alt="" height="24">
+                  <input type="text" id="AssociatedName" class="form-control" placeholder="Seu e-mail" required>
+              </div>
             </div>
-        </div>
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 text-center" style="font-size: 0.675rem;">
-                        <strong> © @DateTime.Now.Year Progressiva Assitência Mútua - Todos os Direitos Reservados</strong><div class="clearfix"></div>
-                        <span>Av. Mal. Floriano Peixoto, 3024 - Parolin, Curitiba - PR, 80220-000</span><div class="clearfix"></div>
-                        <span><i class="fe-phone"></i> 0800-677-1020</span><div class="clearfix"></div>
-                        <span><i class="fe-phone"></i> (41) 2105-1020</span><div class="clearfix"></div>
-                        <span><i class="fe-mail"></i> contato@aprogressiva.com.br</span><div class="clearfix"></div>
-                    </div>
-                </div>
+            <div class="input-wrapper">
+              <label class="input-label" for="AssociatedName">Telefone<span>*</span></label>
+              <div class="input-content">
+                  <img src="~/images/input-icons/phone.svg" alt="" height="24">
+                  <input type="text" id="AssociatedName" class="form-control" placeholder="Seu telefone" required>
+              </div>
             </div>
-        </footer>
-    </div>
-
-    <!-- Modal descount -->
-    <div id="implement-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title mt-0">Adicionar</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group" id="implement-plate">
-                                <label class="control-label" for="ImplementPlate"> Placa <span class="text-danger">*</span></label>
-                                <input type="text" id="ImplementPlate" class="form-control text-uppercase" maxlength="8" required>
-                            </div>
-
-                            <div class="form-group" id="implement-brand-id">
-                                <label class="control-label" for="ImplementBrandId"> Marca <span class="text-danger">*</span></label>
-                                <select class="form-control select2" id="ImplementBrandId" required></select>
-                            </div>
-
-                            <div class="form-group" id="implement-model-id">
-                                <label class="control-label" for="ImplementModelId"> Modelo <span class="text-danger">*</span></label>
-                                <select class="form-control select2" id="ImplementModelId" required></select>
-                            </div>
-
-                            <div class="form-group" id="implement-type-id">
-                                <label class="control-label" for="ImplementTypeId"> Tipo <span class="text-danger">*</span></label>
-                                <select class="form-control select2" id="ImplementTypeId" required></select>
-                            </div>
-
-                            <div class="form-group" id="implement-floor-type-id">
-                                <label class="control-label" for="ImplementFloorTypeId"> Tipo de Piso <span class="text-danger">*</span></label>
-                                <select class="form-control select2" id="ImplementFloorTypeId" required></select>
-                            </div>
-
-                            <div class="form-group" id="implement-year">
-                                <label class="control-label" for="ImplementYear"> Ano <span class="text-danger">*</span></label>
-                                <input type="number" id="ImplementYear" class="form-control text-uppercase" maxlength="4" required>
-                            </div>
-
-                            <div class="form-group" id="implement-value">
-                                <label class="control-label">Valor</label>
-                                <div class="input-group">
-                                    <div class="input-group-btn input-group-append">
-                                        <span id="span-residual" class="input-group-text">R$</span>
-                                    </div>
-                                    <input id="ImplementValue" type="text" data-toggle="input-mask" data-mask-format="#.##0,00" data-reverse="true" class="form-control" data-symbol="R$ " value="0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Cancelar</button>
-                    <button type="button" id="btn-save-implement" class="btn btn-primary waves-effect waves-light mr-1">Salvar</button>
-                </div>
+            <div class="input-wrapper">
+              <label class="input-label" for="AssociatedName">UF (Unidade Federativa) <span>*</span></label>
+              <div class="input-content">
+                <select class="form-control select2 select2-hidden-accessible" id="StateId" required>
+                  <option value="" data-select2-id="3">Selecione a UF</option>
+                  <option value="1" data-select2-id="21">AC</option>
+                  <option value="2" data-select2-id="22">AL</option>
+                  <option value="3" data-select2-id="23">AP</option>
+                  <option value="4" data-select2-id="24">AM</option>
+                  <option value="5" data-select2-id="25">BA</option>
+                  <option value="6" data-select2-id="26">CE</option>
+                  <option value="7" data-select2-id="27">DF</option>
+                  <option value="8" data-select2-id="28">ES</option>
+                  <option value="9" data-select2-id="29">GO</option>
+                  <option value="10" data-select2-id="30">MA</option>
+                  <option value="11" data-select2-id="31">MT</option>
+                  <option value="12" data-select2-id="32">MS</option>
+                  <option value="13" data-select2-id="33">MG</option>
+                  <option value="14" data-select2-id="34">PA</option>
+                  <option value="15" data-select2-id="35">PB</option>
+                  <option value="16" data-select2-id="36">PR</option>
+                  <option value="17" data-select2-id="37">PE</option>
+                  <option value="18" data-select2-id="38">PI</option>
+                  <option value="19" data-select2-id="39">RJ</option>
+                  <option value="20" data-select2-id="40">RN</option>
+                  <option value="21" data-select2-id="41">RS</option>
+                  <option value="22" data-select2-id="42">RO</option>
+                  <option value="23" data-select2-id="43">RR</option>
+                  <option value="24" data-select2-id="44">SC</option>
+                  <option value="25" data-select2-id="45">SP</option>
+                  <option value="26" data-select2-id="46">SE</option>
+                  <option value="27" data-select2-id="47">TO</option>
+                </select>
+              </div>
             </div>
-        </div>
-    </div>
-
-    <div id="finish-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title mt-0"></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="control-label" for="InterestId"> Selecione <span class="text-danger">*</span></label>
-                                <select class="form-control select2" id="InterestId" required></select>
-                            </div>
-
-                            <div id="justification-div" class="form-group" style="display:none">
-                                <label class="control-label" for="InterestJustification"> Motivo <span class="text-danger">*</span></label>
-                                <textarea id="InterestJustification" class="form-control"> </textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Cancelar</button>
-                        <button type="button" id="quota-finish" class="btn btn-primary waves-effect waves-light mr-1">Enviar</button>
-                    </div>
-                </div>
+            <div class="btn-wrapper">
+              <button id="associated-next" type="button" disabled>
+                  Continuar
+              </button>
             </div>
-        </div>
-    </div>
+          </div>
+        </div>  
+      </div>
+    </main>
+    <footer>
 
-    <div class="account-pages my-5 pt-5"></div>
+    </footer>  
+  </div>
 
-    <script src="~/js/vendor.min.js"></script>
-    <script src="~/js/app.min.js"></script>
-    <script src="~/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
-    <script src="~/libs/select2/select2.min.js"></script>
-    <script src="~/libs/switchery/switchery.min.js"></script>
-    <script src="~/libs/sweetalert2/sweetalert2.min.js"></script>
-    <script src="~/libs/custombox/custombox.min.js" defer></script>
+  <script src="~/js/vendor.min.js"></script>
+  <script src="~/js/app.min.js"></script>
+  <script src="~/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
+  <script src="~/libs/select2/select2.min.js"></script>
+  <script src="~/libs/switchery/switchery.min.js"></script>
+  <script src="~/libs/sweetalert2/sweetalert2.min.js"></script>
+  <script src="~/libs/custombox/custombox.min.js" defer></script>
 
-    <script src="~/scripts/quotation/new.js" asp-append-version="true" defer></script>
+  <script src="~/scripts/quotation/new.js" asp-append-version="true" defer></script>
 
-    @if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
-    {
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158802903-1" defer></script>
-        <script defer>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
+  @if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+  {
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158802903-1" defer></script>
+      <script defer>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
 
-            gtag('config', 'UA-158802903-1');
-        </script>
-    }
+          gtag('config', 'UA-158802903-1');
+      </script>
+  }
 
 </body>
+
 </html>

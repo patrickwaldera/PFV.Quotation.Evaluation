@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(89.87deg, #173C79 0.11%, #FF4040 100.27%), #FFFFFF;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0px;
+  gap: 18px;
+
+  width: 480px;
+  height: auto;
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  margin: 1.85rem 0;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 90%;
+  max-width: 90%;
+}
+
+.form-content > h3 {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.input-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 90%;
+}
+
+.input-label{
+  font-weight: 500;
+  font-size: 1rem;
+  color: #000000;
+}
+
+.input-label > span {
+  color: #ff4040;
+}
+
+.input-content {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 12px;
+  gap: 12px;
+
+  height: 48px;
+
+  background: #F6F6F6;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.input-content:focus-within {
+  outline: 2px solid #266ADF;
+}
+
+.input-content > input {
+  background-color: transparent;
+  border: none;
+  flex: 1;
+  font-size: 0.875rem;
+}
+
+.input-content > input:focus {
+  outline: none;
+}
+
+.btn-wrapper {
+  width: 90%;
+}
+
+button {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  width: 100%;
+  height: 45px;
+  background: #193C78;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .box {
+    width: 90%;
+  } 
+  img {
+    max-width: 90%;
+  }
+}
