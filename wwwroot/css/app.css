@@ -3181,7 +3181,7 @@ body[data-layout="horizontal"][data-topbar="light"] #topnav {
     width: 100% !important;
 }
 
-    .select2-container .select2-selection--single {
+    . .select2-selection--single {
         background-color: #fff;
         border: 1px solid #ced4da;
         height: 38px;

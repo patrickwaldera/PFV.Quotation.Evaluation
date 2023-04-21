@@ -264,14 +264,14 @@
     }
 
     function showMessageEmail(validated) {
-        var group = $("#AssociatedEmail").parents(".form-group");
+        var group = $("#AssociatedEmail").parents(".input-wrapper");
         group.find("#message-email").remove();
 
         if (validated == false && $("#AssociatedEmail").val() != '') {
             group.append(
-                `<div id="message-email" class="badge badge-danger" style="font-size: 12px;padding: 5px 5px;margin-top: 5px;">
+                `<p id="message-email" style="">
                     E-mail inválido.
-                </div>`)
+                </p>`)
         }
     }
 
