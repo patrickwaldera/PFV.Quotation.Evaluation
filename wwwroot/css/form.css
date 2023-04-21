@@ -129,6 +129,14 @@ button {
   color: #fff;
 }
 
+button[disabled]:hover{
+  cursor: not-allowed;
+}
+
+button:disabled{
+  opacity: 0.4;
+}
+
 @media (max-width: 500px) {
   .box {
     width: 90%;
