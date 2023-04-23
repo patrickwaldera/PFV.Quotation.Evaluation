@@ -1,4 +1,9 @@
-[![header][header-url]][header-link]
+<center>
+
+  [![header][header-url]][header-link]
+
+</center>
+
 
 # 🚗 Progressiva | Proteção Veicular
 
@@ -24,7 +29,7 @@ Manter a validação de e-mail ativa. ✅
 
 <!-- Markdown link & img dfn's -->
 
-[header-url]: wwwroot/images/logo.png
+[header-url]: readme-images/Logo.svg
 [header-link]: https://www.aprogressiva.com.br/
 
 [form1-image]: readme-images/form1.jpg
