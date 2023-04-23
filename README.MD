@@ -1,8 +1,8 @@
-<center>
+<div align="center">
 
   [![header][header-url]][header-link]
-
-</center>
+  
+</div>
 
 
 # 🚗 Progressiva | Proteção Veicular
