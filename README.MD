@@ -10,10 +10,10 @@
 ---
 ## Desafios 🎯
 
-Subir o repositório no GIT. ✅
-Identificar os arquivos que precisam ser editados. ✅
-Definir um novo front, de acordo com o nível de conhecimento. ✅
-Manter a validação de e-mail ativa. ✅
+Subir o repositório no GIT. ✅ <br/>
+Identificar os arquivos que precisam ser editados. ✅ <br/>
+Definir um novo front, de acordo com o nível de conhecimento. ✅ <br/>
+Manter a validação de e-mail ativa. ✅ <br/>
 
 ### **Dados para Cotação**
 ##### *Antes/Depois*
